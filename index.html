@@ -9,9 +9,14 @@
     body { background-color: #f2f5f2; color: #2c3e35; }
     
     /* Header / Navbar en tono Verde Bosque Oscuro */
-    header { background: #132a13; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    header { background: #132a13; color: white; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    
+    /* Contenedor del Logo + Nombre */
+    .brand-container { display: flex; align-items: center; gap: 0.8rem; }
+    .brand-logo { width: 45px; height: 45px; object-fit: cover; border-radius: 50%; background: white; padding: 2px; }
     header h1 { font-size: 1.5rem; color: #90a955; font-weight: bold; letter-spacing: 0.5px; }
-    nav button { background: none; border: none; color: #ecf3ec; font-size: 1rem; margin-left: 1rem; cursor: pointer; padding: 0.5rem 0.8rem; border-radius: 6px; transition: all 0.2s ease; }
+
+    nav button { background: none; border: none; color: #ecf3ec; font-size: 1rem; margin-left: 0.5rem; cursor: pointer; padding: 0.5rem 0.8rem; border-radius: 6px; transition: all 0.2s ease; }
     nav button:hover { background: rgba(255,255,255,0.1); color: #90a955; }
     .cart-btn { background: #4f772d; border-radius: 20px; padding: 0.4rem 1.2rem; color: white; font-weight: bold; }
     .cart-btn:hover { background: #31572c; color: white; }
@@ -58,7 +63,11 @@
 
   <!-- Navegación -->
   <header>
-    <h1>BioClean</h1>
+    <div class="brand-container">
+      <!-- Logo a la izquierda de BioClean -->
+      <img src="logo.jpg" alt="Logo BioClean" class="brand-logo" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=100&q=80'">
+      <h1>BioClean</h1>
+    </div>
     <nav>
       <button type="button" onclick="showTab('inicio')">Inicio</button>
       <button type="button" onclick="showTab('productos')">Productos</button>
@@ -90,11 +99,11 @@
     <!-- Misión (Izquierda) y Visión (Derecha) -->
     <div class="about-grid">
       <div class="about-box">
-        <h3> Nuestra Misión</h3>
+        <h3>🎯 Nuestra Misión</h3>
         <p style="margin-top: 0.8rem; line-height: 1.6;">Ofrecer una solución de limpieza multiusos, 100% biodegradable y segura para las personas y sus mascotas, reduciendo el gasto del hogar y el impacto ambiental de la limpieza doméstica.</p>
       </div>
       <div class="about-box">
-        <h3> Nuestra Visión</h3>
+        <h3>👁️ Nuestra Visión</h3>
         <p style="margin-top: 0.8rem; line-height: 1.6;">Para 2030, ser reconocida en Cajicá y Sabana Centro como una marca confiable de limpieza ecológica multiusos, con presencia en más puntos de venta aliados.</p>
       </div>
     </div>
@@ -104,7 +113,7 @@
 
     <!-- Apartado Nuestra Esencia -->
     <div class="about-box">
-      <h3> Nuestra Esencia</h3>
+      <h3>🌱 Nuestra Esencia</h3>
       <p style="margin-top: 0.8rem; line-height: 1.6; margin-bottom: 0.8rem;">
         En BioClean creemos que cuidar de nuestro hogar también significa cuidar de lo que nos rodea. Por eso, nace una propuesta innovadora de limpieza y desinfección que busca combinar practicidad, bienestar y responsabilidad ambiental.
       </p>
