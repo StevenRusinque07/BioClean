@@ -30,7 +30,13 @@
     .hero h2 { font-size: 2.6rem; margin-bottom: 0.6rem; color: #ecf3ec; }
     .hero p { font-size: 1.15rem; color: #d8f3dc; }
 
-    /* Grid de Productos ajustado a 2 columnas principales */
+    /* Grid de Pilares (3 columnas) */
+    .pilares-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .pilar-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; padding: 1.2rem; border: 1px solid #e0e7e0; }
+    .pilar-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; }
+    .pilar-card h4 { font-size: 1.15rem; color: #132a13; margin-bottom: 0.4rem; }
+
+    /* Grid de Presentaciones ajustado a 2 columnas principales */
     .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
     .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; padding: 1.5rem; border: 1px solid #e0e7e0; transition: transform 0.2s ease; }
     .product-card:hover { transform: translateY(-4px); }
@@ -81,8 +87,23 @@
       <h2>Un Producto, Múltiples Cuidados</h2>
       <p>Desinfectante multiusos biodegradable y con envase reutilizable.</p>
     </div>
-    <h3 style="margin-bottom: 1.5rem; color: #132a13; text-align: center;">Nuestras Presentaciones</h3>
-    <div class="product-grid" id="featured-products"></div>
+    <h3 style="margin-bottom: 1.5rem; color: #132a13; text-align: center;">Los tres pilares de BioClean</h3>
+    
+    <!-- Contenedor para las 3 imágenes de los pilares -->
+    <div class="pilares-grid">
+      <div class="pilar-card">
+        <img src="pilar1.jpg" alt="Pilar 1" onerror="this.src='https://via.placeholder.com/300x220?text=Pilar+1'">
+        <h4>Pilar 1</h4>
+      </div>
+      <div class="pilar-card">
+        <img src="pilar2.jpg" alt="Pilar 2" onerror="this.src='https://via.placeholder.com/300x220?text=Pilar+2'">
+        <h4>Pilar 2</h4>
+      </div>
+      <div class="pilar-card">
+        <img src="pilar3.jpg" alt="Pilar 3" onerror="this.src='https://via.placeholder.com/300x220?text=Pilar+3'">
+        <h4>Pilar 3</h4>
+      </div>
+    </div>
   </section>
 
   <!-- Módulo 2: Presentaciones -->
@@ -107,7 +128,7 @@
       </div>
     </div>
 
-    <!-- Imagen oficial de Nosotros (Perro y gato con BioClean) -->
+    <!-- Imagen oficial de Nosotros -->
     <img src="nosotros.jpg" alt="BioClean - Un producto, múltiples cuidados" class="about-image">
 
     <!-- Apartado Nuestra Esencia -->
@@ -151,9 +172,8 @@
 
     let cart = [];
 
-    // Renderizar productos
+    // Renderizar productos en la pestaña Presentaciones
     function renderProducts() {
-      const gridHome = document.getElementById('featured-products');
       const gridAll = document.getElementById('all-products');
       
       const html = products.map(p => `
@@ -165,7 +185,6 @@
         </div>
       `).join('');
 
-      gridHome.innerHTML = html;
       gridAll.innerHTML = html;
     }
 
