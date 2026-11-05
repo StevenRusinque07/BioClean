@@ -31,9 +31,9 @@
     .hero p { font-size: 1.15rem; color: #d8f3dc; }
 
     /* Grid de Pilares (3 columnas) */
-    .pilares-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .pilares-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
     .pilar-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; padding: 1.2rem; border: 1px solid #e0e7e0; }
-    .pilar-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; }
+    .pilar-card img { width: 100%; height: 360px; object-fit: contain; border-radius: 8px; margin-bottom: 0.8rem; background-color: #f8fbf8; }
     .pilar-card h4 { font-size: 1.15rem; color: #132a13; margin-bottom: 0.4rem; }
 
     /* Grid de Presentaciones ajustado a 2 columnas principales */
@@ -92,15 +92,15 @@
     <!-- Contenedor para las 3 imágenes de los pilares -->
     <div class="pilares-grid">
       <div class="pilar-card">
-        <img src="pilar1.jpg" alt="Pilar 1" onerror="this.src='https://via.placeholder.com/300x220?text=Pilar+1'">
-        <h4>Pilar 1</h4>
+        <img src="mascotas.jpg.png" alt="Pilar Mascotas - Uso Seguro">
+        <h4>Mascotas</h4>
       </div>
       <div class="pilar-card">
-        <img src="pilar2.jpg" alt="Pilar 2" onerror="this.src='https://via.placeholder.com/300x220?text=Pilar+2'">
+        <img src="pilar2.jpg" alt="Pilar 2" onerror="this.src='https://via.placeholder.com/300x360?text=Pilar+2'">
         <h4>Pilar 2</h4>
       </div>
       <div class="pilar-card">
-        <img src="pilar3.jpg" alt="Pilar 3" onerror="this.src='https://via.placeholder.com/300x220?text=Pilar+3'">
+        <img src="pilar3.jpg" alt="Pilar 3" onerror="this.src='https://via.placeholder.com/300x360?text=Pilar+3'">
         <h4>Pilar 3</h4>
       </div>
     </div>
