@@ -18,8 +18,13 @@
 
     nav button { background: none; border: none; color: #ecf3ec; font-size: 1rem; margin-left: 0.5rem; cursor: pointer; padding: 0.5rem 0.8rem; border-radius: 6px; transition: all 0.2s ease; }
     nav button:hover { background: rgba(255,255,255,0.1); color: #90a955; }
-    .cart-btn { background: #4f772d; border-radius: 20px; padding: 0.4rem 1.2rem; color: white; font-weight: bold; }
-    .cart-btn:hover { background: #31572c; color: white; }
+    
+    /* Resaltado del botón activo en la navegación */
+    nav button.nav-active { background: #4f772d; color: white; font-weight: bold; }
+
+    .cart-btn { background: #31572c; border-radius: 20px; padding: 0.4rem 1.2rem; color: white; font-weight: bold; }
+    .cart-btn:hover { background: #4f772d; color: white; }
+    .cart-btn.nav-active { background: #90a955; color: #132a13; font-weight: bold; }
 
     /* Secciones */
     section { display: none; padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
@@ -74,10 +79,10 @@
       <h1>BioClean</h1>
     </div>
     <nav>
-      <button type="button" onclick="showTab('inicio')">Inicio</button>
-      <button type="button" onclick="showTab('productos')">Presentaciones</button>
-      <button type="button" onclick="showTab('nosotros')">Nosotros</button>
-      <button type="button" class="cart-btn" onclick="showTab('carrito')">🛒 Carrito (<span id="cart-count">0</span>)</button>
+      <button type="button" id="btn-inicio" class="nav-active" onclick="showTab('inicio')">Inicio</button>
+      <button type="button" id="btn-productos" onclick="showTab('productos')">Presentaciones</button>
+      <button type="button" id="btn-nosotros" onclick="showTab('nosotros')">Nosotros</button>
+      <button type="button" id="btn-carrito" class="cart-btn" onclick="showTab('carrito')">🛒 Carrito (<span id="cart-count">0</span>)</button>
     </nav>
   </header>
 
@@ -92,15 +97,15 @@
     <!-- Contenedor para las 3 imágenes de los pilares -->
     <div class="pilares-grid">
       <div class="pilar-card">
-        <img src="mascotas.jpg.png" alt="Pilar Mascotas - Uso Seguro" onerror="this.src='mascotas.jpg.png'">
+        <img src="mascotas.jpg" alt="Pilar Mascotas - Uso Seguro" onerror="this.src='mascotas.jpg.png'">
         <h4>Mascotas</h4>
       </div>
       <div class="pilar-card">
-        <img src="multiusos.jpg.png" alt="Pilar Multiusos - Superficies" onerror="this.src='multiusos.jpg.png'">
+        <img src="multiusos.jpg" alt="Pilar Multiusos - Superficies" onerror="this.src='multiusos.jpg.png'">
         <h4>Multiusos</h4>
       </div>
       <div class="pilar-card">
-        <img src="frutas.jpg.png" alt="Pilar Frutas y Verduras - Alimentos Seguros" onerror="this.src='frutas.jpg.png'">
+        <img src="frutas.jpg" alt="Pilar Frutas y Verduras - Alimentos Seguros" onerror="this.src='frutas.jpg.png'">
         <h4>Frutas y Verduras</h4>
       </div>
     </div>
@@ -119,11 +124,11 @@
     <!-- Misión (Izquierda) y Visión (Derecha) -->
     <div class="about-grid">
       <div class="about-box">
-        <h3> Nuestra Misión</h3>
+        <h3>🎯 Nuestra Misión</h3>
         <p style="margin-top: 0.8rem; line-height: 1.6;">Ofrecer una solución de limpieza multiusos, 100% biodegradable y segura para las personas y sus mascotas, reduciendo el gasto del hogar y el impacto ambiental de la limpieza doméstica.</p>
       </div>
       <div class="about-box">
-        <h3> Nuestra Visión</h3>
+        <h3>👁️ Nuestra Visión</h3>
         <p style="margin-top: 0.8rem; line-height: 1.6;">Para 2030, ser reconocida en Cajicá y Sabana Centro como una marca confiable de limpieza ecológica multiusos, con presencia en más puntos de venta aliados.</p>
       </div>
     </div>
@@ -133,7 +138,7 @@
 
     <!-- Apartado Nuestra Esencia -->
     <div class="about-box">
-      <h3> Nuestra Esencia</h3>
+      <h3>🌱 Nuestra Esencia</h3>
       <p style="margin-top: 0.8rem; line-height: 1.6; margin-bottom: 0.8rem;">
         En BioClean creemos que cuidar de nuestro hogar también significa cuidar de lo que nos rodea. Por eso, nace una propuesta innovadora de limpieza y desinfección que busca combinar practicidad, bienestar y responsabilidad ambiental.
       </p>
@@ -188,12 +193,19 @@
       gridAll.innerHTML = html;
     }
 
-    // Cambiar de pestaña
+    // Cambiar de pestaña y resaltar el botón activo
     function showTab(tabId) {
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('nav-active'));
+      
       const target = document.getElementById(tabId);
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      
       if (target) {
         target.classList.add('active');
+      }
+      if (activeBtn) {
+        activeBtn.classList.add('nav-active');
       }
     }
 
