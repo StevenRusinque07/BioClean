@@ -92,12 +92,12 @@
     <!-- Contenedor para las 3 imágenes de los pilares -->
     <div class="pilares-grid">
       <div class="pilar-card">
-        <img src="mascotas.jpg.png" alt="Pilar Mascotas - Uso Seguro">
+        <img src="mascotas.jpg" alt="Pilar Mascotas - Uso Seguro" onerror="this.src='mascotas.jpg.png'">
         <h4>Mascotas</h4>
       </div>
       <div class="pilar-card">
-        <img src="pilar2.jpg" alt="Pilar 2" onerror="this.src='https://via.placeholder.com/300x360?text=Pilar+2'">
-        <h4>Pilar 2</h4>
+        <img src="multiusos.jpg" alt="Pilar Multiusos - Superficies" onerror="this.src='multiusos.jpg.png'">
+        <h4>Multiusos</h4>
       </div>
       <div class="pilar-card">
         <img src="pilar3.jpg" alt="Pilar 3" onerror="this.src='https://via.placeholder.com/300x360?text=Pilar+3'">
@@ -129,7 +129,7 @@
     </div>
 
     <!-- Imagen oficial de Nosotros -->
-    <img src="nosotros.jpg" alt="BioClean - Un producto, múltiples cuidados" class="about-image">
+    <img src="nosotros.jpg" alt="BioClean - Un producto, múltiples cuidados" class="about-image" onerror="this.src='nosotros.jpg.png'">
 
     <!-- Apartado Nuestra Esencia -->
     <div class="about-box">
@@ -178,7 +178,7 @@
       
       const html = products.map(p => `
         <div class="product-card">
-          <img src="${p.img}" alt="${p.name}">
+          <img src="${p.img}" alt="${p.name}" onerror="this.src='${p.img}.png'">
           <h3>${p.name}</h3>
           <p class="price">$${p.price.toLocaleString()}</p>
           <button class="btn-add" onclick="addToCart(${p.id})">Agregar al carrito</button>
